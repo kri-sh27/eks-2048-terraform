@@ -1,15 +1,15 @@
-resource "kubernetes_service_account" "aws_load_balancer_controller" {
-  metadata {
-    name      = "aws-load-balancer-controller"
-    namespace = "kube-system"
+# resource "kubernetes_service_account" "aws_load_balancer_controller" {
+#   metadata {
+#     name      = "aws-load-balancer-controller"
+#     namespace = "kube-system"
 
-    annotations = {
-      "eks.amazonaws.com/role-arn" = aws_iam_role.alb_controller.arn
-    }
-  }
+#     annotations = {
+#       "eks.amazonaws.com/role-arn" = aws_iam_role.alb_controller.arn
+#     }
+#   }
 
-  depends_on = [
-    module.eks,
-    aws_iam_role_policy_attachment.alb_controller
-  ]
-}
+#   depends_on = [
+#     module.eks,
+#     aws_iam_role_policy_attachment.alb_controller
+#   ]
+# }
