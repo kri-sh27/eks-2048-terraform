@@ -5,6 +5,8 @@ module "vpc" {
   name = "${var.cluster_name}-vpc"
   cidr = var.vpc_cidr
 
+   manage_default_network_acl = false
+
   azs = [
     "ap-south-1a",
     "ap-south-1b"
